@@ -1,6 +1,11 @@
 enable_courseware_mfe plugin for `Tutor <https://docs.tutor.overhang.io>`__
 ===================================================================================
 
+Enables courseware micro front-end application functionality in the LMS.
+
+See: https://discuss.openedx.org/t/disabling-the-learning-mfe-in-maple-slightly-misleading-documentation/6320
+
+
 Installation
 ------------
 
