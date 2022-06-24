@@ -25,11 +25,12 @@ config = {
 }
 
 ################# Initialization tasks
-# To run the script from templates/enable_courseware_mfe/tasks/myservice/init, add:
-# hooks.Filters.COMMANDS_INIT.add_item((
-#     "myservice",
-#     ("enable_courseware_mfe", "tasks", "myservice", "init"),
-# ))
+hooks.Filters.COMMANDS_INIT.add_item(
+    (
+        "lms",
+        ("enable_courseware_mfe", "tasks", "lms", "init"),
+    )
+)
 
 ################# Docker image management
 # To build an image with `tutor images build myimage`, add a Dockerfile to templates/enable_courseware_mfe/build/myimage and write:
@@ -81,9 +82,6 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
     ]
 )
 hooks.Filters.CONFIG_UNIQUE.add_items(
-    [
-        (f"ENABLE_COURSEWARE_MFE_{key}", value)
-        for key, value in config["unique"].items()
-    ]
+    [(f"ENABLE_COURSEWARE_MFE_{key}", value) for key, value in config["unique"].items()]
 )
 hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))

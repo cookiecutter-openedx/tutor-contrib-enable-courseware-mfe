@@ -41,9 +41,7 @@ setup(
     python_requires=">=3.7",
     install_requires=["tutor"],
     entry_points={
-        "tutor.plugin.v1": [
-            "enable_courseware_mfe = tutorenable_courseware_mfe.plugin"
-        ]
+        "tutor.plugin.v1": ["enable_courseware_mfe = tutorenable_courseware_mfe.plugin"]
     },
     classifiers=[
         "Development Status :: 3 - Alpha",
